@@ -1,0 +1,5 @@
+SETUP
+Works with MacFSEvents.  pip install macfsevents
+
+RUN
+python filewatcher.py FULL_PATH_TO_SRC FULL_PATH_TO_DEST 
