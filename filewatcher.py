@@ -1,6 +1,7 @@
 import os
 import sys
 import shutil
+import time
 from fsevents import Observer, Stream
 
 def copy(FileEvent):
@@ -36,8 +37,9 @@ if __name__ == '__main__':
         observer.start()
         stream = Stream(copy, SRC_PATH, file_events=True)
         observer.schedule(stream)
+        print "[INFO] Monitoring %s and copying to %s" % (SRC_PATH, DEST_PATH)
         while True:
-            pass
+            time.sleep(86400)
     except KeyboardInterrupt:
         observer.unschedule(stream)
         observer.stop()
